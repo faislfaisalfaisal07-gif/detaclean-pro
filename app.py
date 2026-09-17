@@ -204,7 +204,7 @@ Do not invent columns that do not exist.
 """
     try:
         response = client.chat.completions.create(
-            model="llama-3.1-8b-instant",
+            model="openai/gpt-oss-20b",
             messages=[
                 {"role": "system", "content": "You are an expert data quality analyst. Return concise, accurate JSON."},
                 {"role": "user", "content": prompt}
@@ -453,7 +453,7 @@ with st.sidebar:
         st.success("Groq API connected")
     else:
         st.warning("Groq API key not configured")
-    st.caption("AI model: llama-3.1-8b-instant")
+    st.caption("AI model:"openai/gpt-oss-20b")
     st.divider()
     st.caption("DataClean Pro")
     st.caption("Professional data cleaning for modern businesses.")
@@ -605,7 +605,7 @@ analyze_col1, analyze_col2 = st.columns([1, 3])
 with analyze_col1:
     analyze_clicked = st.button("Run AI Analysis", type="primary", use_container_width=True)
 with analyze_col2:
-    st.caption("DataClean Pro uses Groq's llama-3.1-8b-instant model to identify potential quality issues.")
+    st.caption("DataClean Pro uses Groq's  openai/gpt-oss-20b,model to identify potential quality issues.")
 
 if analyze_clicked:
     with st.spinner("AI is analyzing your dataset..."):
