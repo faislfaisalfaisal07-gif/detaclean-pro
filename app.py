@@ -453,7 +453,7 @@ with st.sidebar:
         st.success("Groq API connected")
     else:
         st.warning("Groq API key not configured")
-   st.caption("AI model: openai/gpt-oss-20b")
+        st.caption("AI model: openai/gpt-oss-20b")
     st.divider()
     st.caption("DataClean Pro")
     st.caption("Professional data cleaning for modern businesses.")
