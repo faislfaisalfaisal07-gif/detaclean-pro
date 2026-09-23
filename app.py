@@ -103,7 +103,8 @@ if "original_df" not in st.session_state:
 if "cleaning_report" not in st.session_state:
     st.session_state.cleaning_report = []
     if "ai_analysis" not in st.session_state:
-    st.session_state.ai_analysis = None
+            st.session_state.ai_analysis = None
+    
 
 # ============================================================
 # TRACKING
