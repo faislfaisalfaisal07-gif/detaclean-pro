@@ -102,9 +102,18 @@ if "original_df" not in st.session_state:
     st.session_state.original_df = None
 if "cleaning_report" not in st.session_state:
     st.session_state.cleaning_report = []
-if "ai_analysis" not in st.session_state:
+    if "ai_analysis" not in st.session_state:
     st.session_state.ai_analysis = None
 
+# ============================================================
+# TRACKING
+# ============================================================
+query_params = st.query_params
+ref = query_params.get("ref", "direct")
+
+if "referrer" not in st.session_state:
+    st.session_state.referrer = ref
+    st.session_state.session_start = datetime.datetime.now()
 # ============================================================
 # SAMPLE DATA
 # ============================================================
