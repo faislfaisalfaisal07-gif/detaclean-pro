@@ -104,18 +104,17 @@ if "cleaning_report" not in st.session_state:
     st.session_state.cleaning_report = []
     if "ai_analysis" not in st.session_state:
             st.session_state.ai_analysis = None
-    
 
 # ============================================================
 # TRACKING
 # ============================================================
-query_params = st.query_params
-ref = query_params.get("ref", "direct")
+try:
+    ref = st.query_params.get("ref", "direct")
+except:
+    ref = "direct"
 
-if "referrer" not in st.session_state:
-    st.session_state.referrer = ref
-    st.session_state.session_start = datetime.datetime.now()
-# ============================================================
+st.session_state.referrer = ref
+    
 # SAMPLE DATA
 # ============================================================
 def get_sample_data():
@@ -465,7 +464,7 @@ with st.sidebar:
     else:
         st.warning("Groq API key not configured")
         st.caption("AI model: openai/gpt-oss-20b")
-        st.caption(f"📍 Ref: {st.session_state.referrer}")
+        st.write(f"📍 Ref: {st.session_state.referrer}")
     st.divider()
     st.caption("DataClean Pro")
     st.caption("Professional data cleaning for modern businesses.")
