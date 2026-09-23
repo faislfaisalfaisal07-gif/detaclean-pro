@@ -464,6 +464,7 @@ with st.sidebar:
     else:
         st.warning("Groq API key not configured")
         st.caption("AI model: openai/gpt-oss-20b")
+        st.caption(f"📍 Ref: {st.session_state.referrer}")
     st.divider()
     st.caption("DataClean Pro")
     st.caption("Professional data cleaning for modern businesses.")
